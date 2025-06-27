@@ -1,50 +1,72 @@
-# Welcome to your Expo app 👋
+# Monthly Analyzer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Next-gen personal finance dashboard built with React Native & Expo.
 
-## Get started
+## Overview
+Track income & expenses and drill down into daily details. Animated charts, category breakdown, and a slick flip between Expenses & Gains views – all running 100 % offline on SQLite.
 
-1. Install dependencies
+## Features
+- Monthly summary of income, expenses and net
+- Interactive bar chart per-day; tap to see the transaction list and live filter by amount
+- Pie chart summarising expenses by category
+- One-tap switch between Expense and Gains dashboards
+- Exclude categories on the fly
+- Test-data generator for quick demos
+- Light & Dark theme support
+- Smooth animations via Reanimated 3
 
+## Tech Stack
+- **Expo** 53 / React Native 0.79
+- **TypeScript** throughout
+- **react-native-reanimated** 3
+- **react-native-gifted-charts** for visualisations
+- **Expo Router** for file-based navigation
+- **expo-sqlite** for local data storage
+
+## Getting Started
+1. Install prerequisites: Node 18+, Git, and the Expo CLI
    ```bash
-   npm install
+   npm install -g expo-cli
    ```
-
-2. Start the app
-
+2. Clone & install dependencies
    ```bash
-    npx expo start
+   git clone <repo-url>
+   cd telegramAppOBS-new
+   npm install            # or yarn
    ```
+3. Launch the dev server
+   ```bash
+   npm start              # opens Expo DevTools
+   ```
+4. Run on your device or emulator from the DevTools UI.
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### Useful Scripts
 ```bash
-npm run reset-project
+npm run android   # build & run on Android emulator/device
+npm run ios       # build & run on iOS simulator/device
+npm run web       # start the web target
+npm run reset-project   # wipe demo code and start fresh
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Seeding Demo Data
+Inside the **Monthly Analyzer** screen hit **Generate Test Data** to create realistic sample transactions for the selected month.
 
-## Learn more
+## Project Structure (top-level)
+```
+app/            Expo Router screens & navigation
+components/     Shared UI widgets
+constants/      Theme colours & static config
+hooks/          Custom hooks (theme, utils)
+lib/            Database helpers & models
+assets/         Images & fonts
+scripts/        Dev utilities
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Roadmap
+- Cloud sync & multi-device support
+- Budgets and spending alerts
+- Enhanced category management UI
+- Unit / integration tests
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+Maintained by the dev team – open an issue or PR if you have ideas.
